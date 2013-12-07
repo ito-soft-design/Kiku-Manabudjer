@@ -1,15 +1,15 @@
 class AppDelegate
+
+  attr_accessor :window             # @type_info NSWindow
+  attr_accessor :objectController   # @type_info NSObjectController
+  attr_accessor :karuta
+  
   def applicationDidFinishLaunching(notification)
     buildMenu
     buildWindow
+    @karuta = Karuta.new title:"title", lines_text:%w(a b c d e f).join("\n")
   end
 
   def buildWindow
-    @mainWindow = NSWindow.alloc.initWithContentRect([[240, 180], [480, 360]],
-      styleMask: NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask|NSResizableWindowMask,
-      backing: NSBackingStoreBuffered,
-      defer: false)
-    @mainWindow.title = NSBundle.mainBundle.infoDictionary['CFBundleName']
-    @mainWindow.orderFrontRegardless
   end
 end
