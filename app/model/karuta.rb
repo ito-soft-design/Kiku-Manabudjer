@@ -15,4 +15,15 @@ class Karuta
     @lines_text = options[:lines_text]
   end
   
+  def to_h
+    {
+      title: title,
+      lines_text: lines_text
+    }
+  end
+  
+  def to_json
+    BW::JSON.generate to_h
+  end
+  
 end

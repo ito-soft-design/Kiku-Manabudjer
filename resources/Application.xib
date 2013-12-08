@@ -62,8 +62,16 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="File" id="81">
                         <items>
-                            <menuItem title="New" keyEquivalent="n" id="82"/>
-                            <menuItem title="Open…" keyEquivalent="o" id="72"/>
+                            <menuItem title="New" keyEquivalent="n" id="82">
+                                <connections>
+                                    <action selector="create:" target="3Iv-u7-Pxx" id="o1O-PZ-jEe"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open…" keyEquivalent="o" id="72">
+                                <connections>
+                                    <action selector="open:" target="3Iv-u7-Pxx" id="tgj-o3-Ndb"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Open Recent" id="124">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="125">
@@ -85,7 +93,12 @@
                             </menuItem>
                             <menuItem title="Save…" keyEquivalent="s" id="75">
                                 <connections>
-                                    <action selector="saveDocument:" target="-1" id="362"/>
+                                    <action selector="save:" target="3Iv-u7-Pxx" id="hC4-j0-t9t"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save As…" id="H9l-vu-rAD">
+                                <connections>
+                                    <action selector="saveAs:" target="3Iv-u7-Pxx" id="h71-IZ-cVb"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Revert to Saved" id="112">
@@ -796,6 +809,9 @@
                     <constraint firstItem="XlH-ko-mLx" firstAttribute="leading" secondItem="368" secondAttribute="leading" constant="22" id="yf8-lI-317"/>
                 </constraints>
             </view>
+            <connections>
+                <binding destination="8BY-c8-gWT" name="title" keyPath="selection.title" id="Ftf-KQ-Vyt"/>
+            </connections>
         </window>
         <objectController objectClassName="Karuta" id="8BY-c8-gWT">
             <declaredKeys>
