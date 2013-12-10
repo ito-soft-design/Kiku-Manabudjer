@@ -9,7 +9,7 @@ class AppDelegate
   def applicationDidFinishLaunching(notification)
 #    buildMenu
     buildWindow
-    create self
+#    create self
   end
 
   def buildWindow

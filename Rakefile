@@ -11,7 +11,7 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'kikumanager'
-  app.info_plist['NSMainNibFile'] = 'Application'
+  app.info_plist['NSMainNibFile'] = 'MainMenu'
 
 
   # CFBundleDocumentTypes
@@ -38,7 +38,9 @@ Motion::Project::App.setup do |app|
       "LSItemContentTypes" => [
         "com.itosoft.learn.by.hearing.file"
       ],
-      "LSHandlerRank" => "Owner"
+      "CFBundleTypeRole" => "Editor",
+      "LSHandlerRank" => "Owner",
+      "NSDocumentClass" => "KikumaDocument"
     }
   ]
   app.info_plist["CFBundleDocumentTypes"] = document_types

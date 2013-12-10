@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="KikumaDocument">
+            <connections>
+                <outlet property="window" destination="5" id="18"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="133" y="235" width="595" height="445"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <value key="minSize" type="size" width="94" height="86"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="595" height="445"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3N-Fw-Vle">
+                        <rect key="frame" x="107" y="76" width="468" height="324"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" id="HTo-Ou-KVT">
+                            <rect key="frame" x="1" y="1" width="466" height="322"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="EF7-3J-Orp">
+                                    <rect key="frame" x="0.0" y="0.0" width="466" height="322"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="466" height="322"/>
+                                    <size key="maxSize" width="585" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="466" height="322"/>
+                                    <size key="maxSize" width="585" height="10000000"/>
+                                    <connections>
+                                        <binding destination="-2" name="attributedString" keyPath="karuta.lines_text" id="ff2-xW-EJZ"/>
+                                    </connections>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="WCI-4t-5cX">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="iZn-iN-GIa">
+                            <rect key="frame" x="451" y="1" width="16" height="322"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-v2-nRv">
+                        <rect key="frame" x="107" y="408" width="468" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="OwD-1f-TbR">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="karuta.title" id="MF1-j4-8E2"/>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2A9-eu-Epu">
+                        <rect key="frame" x="18" y="383" width="83" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="lines:" id="iwh-dw-rwA">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lTI-bl-4nm">
+                        <rect key="frame" x="18" y="408" width="83" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="79" id="VxJ-o3-9mx"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="title:" id="Vli-Ve-A4Z">
+                            <font key="font" size="13" name="AquaKana"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="HZJ-Qe-DwN">
+                        <rect key="frame" x="105" y="47" width="46" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Pair" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8Op-Wr-e9u">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="karuta.for_language" id="YZG-YC-E0m"/>
+                        </connections>
+                    </button>
+                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OXx-55-pqh">
+                        <rect key="frame" x="338" y="44" width="240" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="237" id="z7j-T5-7ZL"/>
+                        </constraints>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="7Or-FW-O7D">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                        <connections>
+                            <binding destination="-2" name="content" keyPath="karuta.available_languages" id="Zgq-eR-im6"/>
+                            <binding destination="-2" name="value" keyPath="karuta.first_language" previousBinding="Zgq-eR-im6" id="kPu-6O-dGm"/>
+                        </connections>
+                    </comboBox>
+                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yw0-OW-2Iw">
+                        <rect key="frame" x="338" y="16" width="240" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="237" id="APB-X3-uXs"/>
+                        </constraints>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="JyX-qv-Imh">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                        <connections>
+                            <binding destination="-2" name="content" keyPath="karuta.available_languages" id="LzB-eA-J9K"/>
+                            <binding destination="-2" name="value" keyPath="karuta.second_language" previousBinding="LzB-eA-J9K" id="MoK-V5-v80"/>
+                        </connections>
+                    </comboBox>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zWf-fF-aAP">
+                        <rect key="frame" x="202" y="48" width="130" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="126" id="o7S-Ny-Y4w"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="First line:" id="Si2-US-Y7Z">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gyb-Hp-596">
+                        <rect key="frame" x="202" y="20" width="130" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Second line:" id="OXz-zo-8BQ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Yw0-OW-2Iw" firstAttribute="leading" secondItem="Gyb-Hp-596" secondAttribute="trailing" constant="8" symbolic="YES" id="2Cd-mR-qlW"/>
+                    <constraint firstItem="Gyb-Hp-596" firstAttribute="baseline" secondItem="Yw0-OW-2Iw" secondAttribute="baseline" id="3lz-zI-qzp"/>
+                    <constraint firstItem="C3N-Fw-Vle" firstAttribute="trailing" secondItem="OXx-55-pqh" secondAttribute="trailing" id="5XG-1D-TeM"/>
+                    <constraint firstItem="lTI-bl-4nm" firstAttribute="top" secondItem="6" secondAttribute="top" constant="20" symbolic="YES" id="5kR-fN-qrH"/>
+                    <constraint firstItem="lTI-bl-4nm" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="20" symbolic="YES" id="8xW-g3-fAg"/>
+                    <constraint firstItem="2A9-eu-Epu" firstAttribute="top" secondItem="lTI-bl-4nm" secondAttribute="bottom" constant="8" symbolic="YES" id="9fa-Ew-zak"/>
+                    <constraint firstItem="OXx-55-pqh" firstAttribute="top" secondItem="C3N-Fw-Vle" secondAttribute="bottom" constant="8" symbolic="YES" id="AAc-dE-ISA"/>
+                    <constraint firstItem="Yw0-OW-2Iw" firstAttribute="leading" secondItem="OXx-55-pqh" secondAttribute="leading" id="AhW-VV-o6p"/>
+                    <constraint firstItem="Yw0-OW-2Iw" firstAttribute="top" secondItem="OXx-55-pqh" secondAttribute="bottom" constant="8" symbolic="YES" id="Aop-3t-Y9B"/>
+                    <constraint firstItem="DRh-v2-nRv" firstAttribute="leading" secondItem="lTI-bl-4nm" secondAttribute="trailing" constant="8" symbolic="YES" id="LBT-H6-6wB"/>
+                    <constraint firstItem="lTI-bl-4nm" firstAttribute="leading" secondItem="2A9-eu-Epu" secondAttribute="leading" id="PIf-Hb-ZH7"/>
+                    <constraint firstItem="OXx-55-pqh" firstAttribute="leading" secondItem="zWf-fF-aAP" secondAttribute="trailing" constant="8" symbolic="YES" id="Q8P-EA-tU6"/>
+                    <constraint firstItem="C3N-Fw-Vle" firstAttribute="leading" secondItem="DRh-v2-nRv" secondAttribute="leading" id="Qe3-Ww-o2h"/>
+                    <constraint firstItem="zWf-fF-aAP" firstAttribute="leading" secondItem="Gyb-Hp-596" secondAttribute="leading" id="Upk-yL-6u3"/>
+                    <constraint firstItem="C3N-Fw-Vle" firstAttribute="leading" secondItem="2A9-eu-Epu" secondAttribute="trailing" constant="8" symbolic="YES" id="Vkd-sb-S1A"/>
+                    <constraint firstItem="lTI-bl-4nm" firstAttribute="baseline" secondItem="DRh-v2-nRv" secondAttribute="baseline" id="XaL-g8-8Gg"/>
+                    <constraint firstItem="C3N-Fw-Vle" firstAttribute="top" secondItem="DRh-v2-nRv" secondAttribute="bottom" constant="8" symbolic="YES" id="cK5-il-tSq"/>
+                    <constraint firstItem="zWf-fF-aAP" firstAttribute="leading" secondItem="HZJ-Qe-DwN" secondAttribute="trailing" constant="55" id="kb1-xX-9VA"/>
+                    <constraint firstItem="C3N-Fw-Vle" firstAttribute="trailing" secondItem="DRh-v2-nRv" secondAttribute="trailing" id="lEy-3e-YaU"/>
+                    <constraint firstItem="OXx-55-pqh" firstAttribute="trailing" secondItem="Yw0-OW-2Iw" secondAttribute="trailing" id="nUx-7B-kiW"/>
+                    <constraint firstItem="C3N-Fw-Vle" firstAttribute="leading" secondItem="HZJ-Qe-DwN" secondAttribute="leading" id="pLZ-tk-WMv"/>
+                    <constraint firstItem="zWf-fF-aAP" firstAttribute="baseline" secondItem="OXx-55-pqh" secondAttribute="baseline" id="re2-6h-2te"/>
+                    <constraint firstAttribute="bottom" secondItem="Gyb-Hp-596" secondAttribute="bottom" constant="20" symbolic="YES" id="xHg-IF-hdj"/>
+                    <constraint firstItem="HZJ-Qe-DwN" firstAttribute="baseline" secondItem="zWf-fF-aAP" secondAttribute="baseline" id="yzd-E1-5Pu"/>
+                    <constraint firstAttribute="trailing" secondItem="DRh-v2-nRv" secondAttribute="trailing" constant="20" symbolic="YES" id="zgX-4Z-mTj"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="17"/>
+            </connections>
+        </window>
+        <customObject id="-3" userLabel="Application"/>
+    </objects>
+</document>
