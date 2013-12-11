@@ -3,8 +3,10 @@ class KikumaDocument < NSDocument
 
   attr_reader :karuta
 
-  def initialize
+  def init
+    super
     @karuta = Karuta.new title:"Untitled"
+    self
   end
 
   def windowNibName
