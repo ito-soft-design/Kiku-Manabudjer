@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class Karuta
 
+  attr_accessor :uuid
   attr_accessor :title
   attr_accessor :lines_text
   attr_accessor :for_language, :languages
@@ -8,6 +9,7 @@ class Karuta
   attr_accessor :first_language, :second_language
 
   def initialize options={}
+    @uuid = options[:uuid] || BubbleWrap.create_uuid
     @title = options[:title]
     @lines_text = options[:lines_text]
     @for_language = options[:for_language]
@@ -16,6 +18,7 @@ class Karuta
   
   def to_h
     {
+      uuid: uuid,
       title: title,
       
       lines_text: begin
