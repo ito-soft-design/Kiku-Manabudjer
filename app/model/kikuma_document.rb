@@ -3,6 +3,14 @@ class KikumaDocument < NSDocument
 
   attr_reader :karuta
 
+  attr_accessor :idLabel              # @type_info NSTextField
+  attr_accessor :titleLabel           # @type_info NSTextField
+  attr_accessor :linesLabel           # @type_info NSTextField
+  attr_accessor :pairButton           # @type_info NSButton
+  attr_accessor :firstLanguageLabel   # @type_info NSTextField
+  attr_accessor :secondLanguageLabel  # @type_info NSTextField
+  
+
   def init
     super
     @karuta = Karuta.new title:"Untitled"
@@ -10,12 +18,12 @@ class KikumaDocument < NSDocument
   end
 
   def windowNibName
-p "KikumaDocument#windowNibName"
     "Document"
   end
   
   def windowControllerDidLoadNib controller
     super
+    set_title_of_labels
   end
   
   def autosavesInPlace
@@ -23,20 +31,22 @@ p "KikumaDocument#windowNibName"
   end
   
   def dataOfType typeName, error:outError
-
-p typeName
-
     karuta.to_json.nsdata
-    
   end
   
   def readFromData data, ofType:typeName, error:outError
-
-p typeName
-
     @karuta = Karuta.new BW::JSON.parse(data)
-p @karuta
-    @karuta
   end
+
+  private
   
+  def set_title_of_labels
+    titleLabel.stringValue = "Title:"._
+    linesLabel.stringValue = "Lines:"._
+    pairButton.title = "Pair"._
+    firstLanguageLabel.stringValue = "First line:"._
+    secondLanguageLabel.stringValue = "Second line:"._
+  end
+
+
 end

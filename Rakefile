@@ -8,42 +8,52 @@ begin
 rescue LoadError
 end
 
+version = '1.0'
+adhoc = ARGV[0] == "archive"
+
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'kikumanager'
+  app.name = 'Kiku Manabu Manager'
   app.info_plist['NSMainNibFile'] = 'MainMenu'
+  app.identifier = 'com.itosoft.learn.by.hearing.manager'
+  app.copyright = "Copyright (c) 2013 ITO SOFT DESIGN Inc. All Right Reserved."
+  app.version = version
+  app.info_plist['CFBundleShortVersionString'] = version
 
+  app.icon = "AppIcon"
 
   # CFBundleDocumentTypes
-  uti_declarations = [
+  app.info_plist["CFBundleDocumentTypes"] = [
     {
-      "UTTypeIdentifier" => "com.itosoft.learn.by.hearing.file",
-      "UTTypeDescription" => "Kikuma file",
-      "UTTypeConformsTo" => [
-        "public.data"
-      ],
-      "UTTypeTagSpecification" => {
-        "public.mime-type" => "application/octet-stream",
-        "public.filename-extension" => [
-          "kikuma"
-        ]
-      }
-    }
-  ]
-  app.info_plist["UTExportedTypeDeclarations"] = uti_declarations
-
-  document_types = [
-    {
-      "CFBundleTypeName" => "Kikuma file",
-      "LSItemContentTypes" => [
-        "com.itosoft.learn.by.hearing.file"
-      ],
+      "CFBundleTypeExtensions" => ["kikuma"],
+      "CFBundleTypeIconFile" => "icon-1024x1024",
+      "CFBundleTypeMIMETypes" => ["application/json"],
+      "CFBundleTypeName" => "DocumentType",
+      "CFBundleTypeOSTypes" => ["????"],
       "CFBundleTypeRole" => "Editor",
-      "LSHandlerRank" => "Owner",
+      "LSItemContentTypes" => ["com.itosoft.learn.by.hearing.file"],
       "NSDocumentClass" => "KikumaDocument"
     }
   ]
-  app.info_plist["CFBundleDocumentTypes"] = document_types
 
+  # provisioning
+  app.development do
+    if adhoc
+      app.codesign_certificate = "Mac Developer: Katsuyoshi Ito (FN4DNLCM76)"
+    end
+  end
+  app.release do
+    app.codesign_certificate = "3rd Party Mac Developer Application: ITO SOFT DESIGN Inc. (YNJ3TBTJUK)"
+  end
+
+=begin
+  # Entitlements
+  app.entitlements['keychain-access-groups'] = [
+    app.seed_id + '.' + app.identifier
+  ]
+  app.development do
+    app.entitlements['get-task-allow'] = false if adhoc
+  end
+=end
 
 end

@@ -6,6 +6,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="KikumaDocument">
             <connections>
+                <outlet property="firstLanguageLabel" destination="zWf-fF-aAP" id="aSE-Vk-jLt"/>
+                <outlet property="idLabel" destination="dps-rw-lNJ" id="mzg-gx-UXo"/>
+                <outlet property="linesLabel" destination="2A9-eu-Epu" id="3Jv-fQ-zAG"/>
+                <outlet property="pairButton" destination="HZJ-Qe-DwN" id="XaK-gI-QPA"/>
+                <outlet property="secondLanguageLabel" destination="Gyb-Hp-596" id="Y1a-RK-1nK"/>
+                <outlet property="titleLabel" destination="lTI-bl-4nm" id="ZC4-MR-2sK"/>
                 <outlet property="window" destination="5" id="18"/>
             </connections>
         </customObject>
