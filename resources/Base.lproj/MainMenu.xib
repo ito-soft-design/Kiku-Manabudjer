@@ -9,10 +9,10 @@
         <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
-                <menuItem title="KikuManabuManager" id="56">
-                    <menu key="submenu" title="KikuManabuManager" systemMenu="apple" id="57">
+                <menuItem title="Kiku Manabudjer" id="56">
+                    <menu key="submenu" title="Kiku Manabudjer" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About KikuManabuManager" id="58">
+                            <menuItem title="About Kiku Manabudjer" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -31,7 +31,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide KikuManabuManager" keyEquivalent="h" id="134">
+                            <menuItem title="Hide Kiku Manabudjer" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -50,7 +50,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit KikuManabuManager" keyEquivalent="q" id="136">
+                            <menuItem title="Quit Kiku Manabudjer" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="448"/>
                                 </connections>

@@ -13,22 +13,28 @@ adhoc = ARGV[0] == "archive"
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'Kiku Manabu Manager'
-  app.info_plist['NSMainNibFile'] = 'MainMenu'
+  app.name = 'Kiku Manabudjer'
+  app.info_plist['LSHasLocalizedDisplayName'] = true
+
   app.identifier = 'com.itosoft.learn.by.hearing.manager'
+
   app.copyright = "Copyright (c) 2013 ITO SOFT DESIGN Inc. All Right Reserved."
+
   app.version = version
   app.info_plist['CFBundleShortVersionString'] = version
 
   app.icon = "AppIcon"
 
+  app.info_plist['NSMainNibFile'] = 'MainMenu'
+
+
   # CFBundleDocumentTypes
   app.info_plist["CFBundleDocumentTypes"] = [
     {
       "CFBundleTypeExtensions" => ["kikuma"],
-      "CFBundleTypeIconFile" => "icon-1024x1024",
+      "CFBundleTypeIconFile" => "FileIcon",
       "CFBundleTypeMIMETypes" => ["application/json"],
-      "CFBundleTypeName" => "DocumentType",
+      "CFBundleTypeName" => "Kiku Manabu Document",
       "CFBundleTypeOSTypes" => ["????"],
       "CFBundleTypeRole" => "Editor",
       "LSItemContentTypes" => ["com.itosoft.learn.by.hearing.file"],
@@ -46,14 +52,8 @@ Motion::Project::App.setup do |app|
     app.codesign_certificate = "3rd Party Mac Developer Application: ITO SOFT DESIGN Inc. (YNJ3TBTJUK)"
   end
 
-=begin
   # Entitlements
-  app.entitlements['keychain-access-groups'] = [
-    app.seed_id + '.' + app.identifier
-  ]
-  app.development do
-    app.entitlements['get-task-allow'] = false if adhoc
-  end
-=end
+  app.entitlements['com.apple.security.app-sandbox'] = true
+  app.entitlements['com.apple.security.files.user-selected.read-write'] = true
 
 end

@@ -23,6 +23,8 @@ class Karuta
       
       lines_text: begin
         case lines_text
+        when nil
+          nil
         when String
           lines_text
         else
