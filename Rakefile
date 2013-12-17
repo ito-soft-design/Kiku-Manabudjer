@@ -30,18 +30,37 @@ Motion::Project::App.setup do |app|
   app.deployment_target = "10.8"
 
   # CFBundleDocumentTypes
-  app.info_plist["CFBundleDocumentTypes"] = [
+  uti_declarations = [
     {
-      "CFBundleTypeExtensions" => ["kikuma"],
+      "UTTypeIdentifier" => "com.itosoft.learn.by.hearing.file",
+      "UTTypeDescription" => "Kikuma file",
+      "UTTypeConformsTo" => [
+        "public.data"
+      ],
+      "UTTypeTagSpecification" => {
+        "public.mime-type" => "application/octet-stream",
+        "public.filename-extension" => [
+          "kikuma"
+        ]
+      }
+    }
+  ]
+  app.info_plist["UTExportedTypeDeclarations"] = uti_declarations
+
+  # CFBundleDocumentTypes
+  document_types = [
+    {
+      "CFBundleTypeName" => "Kikuma file",
+      "LSItemContentTypes" => [
+        "com.itosoft.learn.by.hearing.file"
+      ],
       "CFBundleTypeIconFile" => "FileIcon",
-      "CFBundleTypeMIMETypes" => ["application/json"],
-      "CFBundleTypeName" => "Kiku Manabu Document",
-      "CFBundleTypeOSTypes" => ["????"],
       "CFBundleTypeRole" => "Editor",
-      "LSItemContentTypes" => ["com.itosoft.learn.by.hearing.file"],
+      "LSHandlerRank" => "Owner",
       "NSDocumentClass" => "KikumaDocument"
     }
   ]
+  app.info_plist["CFBundleDocumentTypes"] = document_types
 
   # provisioning
   app.development do
