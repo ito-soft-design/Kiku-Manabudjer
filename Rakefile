@@ -27,6 +27,7 @@ Motion::Project::App.setup do |app|
 
   app.info_plist['NSMainNibFile'] = 'MainMenu'
 
+  app.deployment_target = "10.8"
 
   # CFBundleDocumentTypes
   app.info_plist["CFBundleDocumentTypes"] = [
